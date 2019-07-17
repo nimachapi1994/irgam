@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Resetpass";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+@for (int i = 0; i < 3; i++)
+{
+    <br />
+}
+<div class="text-center" style="font-family:Tahoma;font-size:medium">
+
+    <div style="font-size:large;font-family:Tahoma;color:forestgreen">@TempData["ok"]<br /><hr /></div>
+    <form action="/AdminAccount/resetpassconfirm" method="post">
+
+        gamGAM@@/!34: <label>رمز عبور شامل حروف بزرگ ,حروف کوچک انگلیسی, کارکتر و اعداد میباشد مثال  </label>
+        <br />
+        <br />
+        <input name="newpass" placeholder="newpass" />
+</div>
+<hr />
+<label></label>
+<div style="font-size:large;font-family:Tahoma;color:blue">لطفا پسورد خود را قبل ارسال کردن در سیستم و ذخیره شدن در جای دیگر یادداشت کنید<br /></div>
+<br />
+<button class="btn btn-success btn-md" style="font-family:Tahoma" id="btnsendPass">ارسال و ذخیره</button>
+</form>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    $(btnsendPass).click(function () {
+        if (  confirm("آیا اطمینان دارید ؟")==true) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+</script>

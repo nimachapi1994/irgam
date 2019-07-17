@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "AboutUs";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-2 col-sm-1 col-xs-1"></div>
+
+      
+        <div class="col-md-8 col-sm-10 col-xs-10">
+            <div class="container text-center">
+                <div class="pull-right"dir="rtl">
+                    @foreach (var item in ViewBag.show as IEnumerable<KabiriGam.Models.AboutUsPage>)
+                    {
+                        if (item.Id == 1)
+                        {
+                            <p>@Html.Raw(item.PageContent)</p>
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-2 col-sm-1 col-xs-1"></div>
+
+
+
+
+
+    </div>
+</div>
+

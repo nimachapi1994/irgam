@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "showOneProject";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+@foreach (var item in ViewBag.show as IEnumerable<KabiriGam.Models.SelectOneService_Result>)
+{
+    <section class="page_single blogs_main blogs_details padTB100">
+        <div class="container">
+            <div class="row">
+                <!--//==Blog Detail Section Start==//-->
+                <div class="col-md-12 col-sm-12  col-xs-12">
+                    <div class="row marB20">
+                        <div class="col-md-12">
+                            <!--//==Thumbnail==//-->
+                            <!--//==Blog Content Start==//-->
+                            <div class="">
+                                <h4>@item.Name</h4>
+                                <!--//==Author Detail==//-->
+                                <div class="meta-block">
+                                    <ul class="inline"></ul>
+                                </div>
+                                <p>@Html.Raw(item.Txt)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//==Comment Area Start==//-->
+                    <div class="row">
+                        @{
+                            var db = new
+                                KabiriGam.Models.DbIrgam();
+                            var d = db.CommentsForServices.Where(x => x.Services_Id == item.Id).ToList();
+                            var isshow = db.CommentsForServices.Where(x => x.IsShow == true).ToList();
+                        }<br /><hr />
+                        @if (d != null)
+                        {
+
+                            <div class="col-md-12 padT0">
+                                <!--//==Section Heading Start==//-->
+                                <div class="left-title">
+                                    <h2>نظرات این سرویس</h2>
+                                    <div class="clear"></div>
+                                </div>
+                                <!--//==Section Heading End==//-->
+                                <!--//==Comment List Start==//-->
+                                <div class="reviews-container padT20">
+                                    <!--//==Comment List Item==//-->
+                                    @foreach (var item1 in d.Where(x => x.IsShow == true).ToList())
+                                    {
+                                        <article class="review-box clearfix">
+
+                                            <div class="rev-content">
+                                                <div class="row">
+                                                    <div class="col-md-8 col-sm-12 col-xs-12">
+                                                        <h4>@item1.Name </h4>
+                                                    </div>
+                                                    <div class="rev-text col-md-12 col-sm-12 col-xs-12">
+                                                        <p>
+                                                            @item1.Txt
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>                                    <gam>____________________________________________________________________________________________________________________________________________</gam>
+
+                                    }
+
+                                    <!--//==Comment List Item==//-->
+
+
+                                </div>
+                                <hr />
+
+                                <!--//==Comment List End==//-->
+                            </div>
+                        }
+
+                        <!--//==Comment Form Section Start==//-->
+                        <div class="col-md-12 padT30">
+                            <!--//==Section Heading Start==//-->
+                            <div class="left-title">
+                                <h2>نظر خود را ارسال نمایید.</h2>
+
+                            </div>
+                            <!--//==Section Heading End==//-->
+                            <div class="row">
+                                <div class="contact-form-section">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div style="color:green" dir="rtl"><br />@TempData["ok"]<br /><br /><br /></div>
+                                            <!--//==Comment Form Start==//-->
+                                            <form class="contact-form" action="/Home/GetOneCommentForService" method="post">
+                                                <div class="col-md-6 form-group">
+                                                    <input type="text" name="name" placeholder="نام و نام خانوادگی">
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <input type="email" name="email" id="exampleInputEmail" placeholder="پست الکترونیکی">
+                                                </div>
+                                                <div class="col-md-12 form-group">
+                                                    <textarea name="txt" class="textarea-message" placeholder="متن نظر" rows="10"></textarea>
+                                                </div>
+                                                <div class="col-md-12 form-group">
+                                                    <button type="submit" class="col-md-3 theme-button">ارسال </button>
+                                                </div>
+                                            </form>
+                                            <!--//==Comment Form End==//-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//==Comment Form Section End==//-->
+                    </div>
+                    <!--//==Comment Area End==//-->
+                </div>
+                <!--//==Blog Detail Section End==//-->
+            </div>
+        </div>
+    </section>
+                            }

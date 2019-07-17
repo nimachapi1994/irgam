@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="irgamcom_gamModelStoreContainer" CdmEntityContainer="DbIrgam">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AboutUsPages">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.AboutUsPage">
+        <MappingFragment StoreEntitySet="AboutUsPage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PageContent" ColumnName="PageContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentsForContents">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.CommentsForContent">
+        <MappingFragment StoreEntitySet="CommentsForContent">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Content_Id" ColumnName="Content_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentsForProjects">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.CommentsForProject">
+        <MappingFragment StoreEntitySet="CommentsForProjects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="date1" ColumnName="date1" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentsForServices">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.CommentsForService">
+        <MappingFragment StoreEntitySet="CommentsForServices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Services_Id" ColumnName="Services_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contactus">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.Contactu">
+        <MappingFragment StoreEntitySet="Contactus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAndFamily" ColumnName="NameAndFamily" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contents">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.Content">
+        <MappingFragment StoreEntitySet="Contents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="ShortTxt" ColumnName="ShortTxt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.Question">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="QuestionTxt" ColumnName="QuestionTxt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestForOneQuestions">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.RequestForOneQuestion">
+        <MappingFragment StoreEntitySet="RequestForOneQuestion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Request" ColumnName="Request" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="ShortTxt" ColumnName="ShortTxt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialNetworks">
+      <EntityTypeMapping TypeName="irgamcom_gamModel.SocialNetwork">
+        <MappingFragment StoreEntitySet="SocialNetworks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="aparat" ColumnName="aparat" />
+          <ScalarProperty Name="LinkedIn" ColumnName="LinkedIn" />
+          <ScalarProperty Name="soroush" ColumnName="soroush" />
+          <ScalarProperty Name="Tlg" ColumnName="Tlg" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="GooglePlus" ColumnName="GooglePlus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="irgamcom_gamModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteOneContact" FunctionName="irgamcom_gamModel.Store.DeleteOneContact" />
+    <FunctionImportMapping FunctionImportName="DeleteOneContent" FunctionName="irgamcom_gamModel.Store.DeleteOneContent" />
+    <FunctionImportMapping FunctionImportName="DeleteOneContentCommen" FunctionName="irgamcom_gamModel.Store.DeleteOneContentCommen" />
+    <FunctionImportMapping FunctionImportName="DeleteOneProject" FunctionName="irgamcom_gamModel.Store.DeleteOneProject" />
+    <FunctionImportMapping FunctionImportName="DeleteOneProjectComment" FunctionName="irgamcom_gamModel.Store.DeleteOneProjectComment" />
+    <FunctionImportMapping FunctionImportName="DeleteOneService" FunctionName="irgamcom_gamModel.Store.DeleteOneService" />
+    <FunctionImportMapping FunctionImportName="DeleteOneServiceComment" FunctionName="irgamcom_gamModel.Store.DeleteOneServiceComment" />
+    <FunctionImportMapping FunctionImportName="InsertOneCommentForOneContent" FunctionName="irgamcom_gamModel.Store.InsertOneCommentForOneContent" />
+    <FunctionImportMapping FunctionImportName="InsertOneCommentForOneProject" FunctionName="irgamcom_gamModel.Store.InsertOneCommentForOneProject" />
+    <FunctionImportMapping FunctionImportName="InsertOneCommentForOneServices" FunctionName="irgamcom_gamModel.Store.InsertOneCommentForOneServices" />
+    <FunctionImportMapping FunctionImportName="InsertOneContact" FunctionName="irgamcom_gamModel.Store.InsertOneContact" />
+    <FunctionImportMapping FunctionImportName="insertOneContent" FunctionName="irgamcom_gamModel.Store.insertOneContent" />
+    <FunctionImportMapping FunctionImportName="InsertOneProject" FunctionName="irgamcom_gamModel.Store.InsertOneProject" />
+    <FunctionImportMapping FunctionImportName="InsertOneService" FunctionName="irgamcom_gamModel.Store.InsertOneService" />
+    <FunctionImportMapping FunctionImportName="SelectAllCommentForOneServices" FunctionName="irgamcom_gamModel.Store.SelectAllCommentForOneServices">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectAllCommentForOneServices_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Services_Id" ColumnName="Services_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllContents" FunctionName="irgamcom_gamModel.Store.SelectAllContents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectAllContents_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="ShortTxt" ColumnName="ShortTxt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllOneContacts" FunctionName="irgamcom_gamModel.Store.SelectAllOneContacts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectAllOneContacts_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAndFamily" ColumnName="NameAndFamily" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllOneContentComment" FunctionName="irgamcom_gamModel.Store.SelectAllOneContentComment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectAllOneContentComment_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Content_Id" ColumnName="Content_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllOneProjectComment" FunctionName="irgamcom_gamModel.Store.SelectAllOneProjectComment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectAllOneProjectComment_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Project_Id" ColumnName="Project_Id" />
+          <ScalarProperty Name="date1" ColumnName="date1" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllProjects" FunctionName="irgamcom_gamModel.Store.SelectAllProjects">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectAllProjects_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllServices" FunctionName="irgamcom_gamModel.Store.SelectAllServices">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectAllServices_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="ShortTxt" ColumnName="ShortTxt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectOneContact" FunctionName="irgamcom_gamModel.Store.SelectOneContact">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectOneContact_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameAndFamily" ColumnName="NameAndFamily" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectOneContent" FunctionName="irgamcom_gamModel.Store.SelectOneContent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectOneContent_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="ShortTxt" ColumnName="ShortTxt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectOneProject" FunctionName="irgamcom_gamModel.Store.SelectOneProject">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectOneProject_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectOneService" FunctionName="irgamcom_gamModel.Store.SelectOneService">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.SelectOneService_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="ShortTxt" ColumnName="ShortTxt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Selectslider" FunctionName="irgamcom_gamModel.Store.Selectslider">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="irgamcom_gamModel.Selectslider_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateOneContent" FunctionName="irgamcom_gamModel.Store.UpdateOneContent" />
+    <FunctionImportMapping FunctionImportName="UpdateOneProject" FunctionName="irgamcom_gamModel.Store.UpdateOneProject" />
+    <FunctionImportMapping FunctionImportName="UpdateOneService" FunctionName="irgamcom_gamModel.Store.UpdateOneService" />
+  </EntityContainerMapping>
+</Mapping>

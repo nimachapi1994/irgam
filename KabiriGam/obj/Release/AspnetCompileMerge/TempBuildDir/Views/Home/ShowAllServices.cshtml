@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "ShowAllServices";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<section class="services padB100 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--//==Section Heading Start==//-->
+                        <div class="centered-title">
+                            <h2>خدمات ما <span class="heading-shapes"><i></i><i></i><i></i></span></h2>
+                            <div class="clear"></div>
+                            <em>ارائه دهنده بهترین و بروزترین طراحی های روز معماری <br> و اجرای با کیفیت متدهای روز اروپا.</em>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <!--//==Section Heading End==//-->
+                <div class="row">
+                    <!--//==Services Item Start==//-->
+                    @foreach (var item in ViewBag.Show as IEnumerable<KabiriGam.Models.SelectAllServices_Result>)
+                    {
+                        <div class="col-md-3 col-sm-6">
+                            <div class="wa-box-style2 grey-bg">
+                                <div class="icon">
+                                    <i aria-hidden="true"><img style="width:75px;height:74px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.Pic)}")" alt="@item.Name" title="@item.Name"></i>
+                                </div>
+                                <div class="text">
+                                    <h4><a href="/home/showOneService?id=@item.Id">@item.Name</a></h4>
+                                    <p>@item.ShortTxt</p>
+                                    <a href="/home/showOneService?id=@item.Id" class="theme-button marT10">بیشتر</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+
+
+                    <!--//==Services Item End==//-->
+                    <!--//==Services Item End==//-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

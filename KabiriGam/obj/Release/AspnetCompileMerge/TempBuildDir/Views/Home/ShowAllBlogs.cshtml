@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "ShowAllBlogs";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<section class="page_single blogs_main padTB100">
+    <div class="container">
+        <div class="row">
+            <!--//==Blog list Section Start==//-->
+            <div class="col-md-9 col-sm-8 col-xs-12">
+                <!--//==Blog Item==//-->
+             @foreach (var item in ViewBag.show as IEnumerable<KabiriGam.Models.SelectAllContents_Result>)
+             {
+                <div class="wa-theme-design-block strict-no-border marB30">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row">
+                            <figure class="dark-theme">
+                                <img style="width:430px;height:250px"  src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" alt="@item.Name"title="@item.Name">
+                                <div class="hover-style"></div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row">
+                            <div class="blog-list-caption block-caption">
+                                <h4><a href="/home/showOneBlog?id=@item.Id">@item.Name</a></h4>
+                                <div class="meta-block">
+                                    <ul class="inline">
+                                        <li><a href="/home/showOneBlog?id=@item.Id"><i class="fa fa-calendar" aria-hidden="true"></i> @KabiriGam.Controllers.HomeController.EngToPer(item.Date.Value) </a></li>
+                                    </ul>
+                                </div>
+                                <p>
+@item.ShortTxt                               </p>
+                                <a href="/home/showOneBlog?id=@item.Id" class="theme-button">بیشتر</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+             }
+                <!--//==Blog Item==//-->
+             
+                <div class="clear"></div>
+                <!--//==Pagination Start==//-->
+                @*<div class="styled-pagination padB30 text-left">
+                    <ul>
+                        <li><a class="prev" href="#"><i class="fa fa-angle-left"></i></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#" class="active">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a class="next" href="#"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>*@
+                <!--//==Pagination End==//-->
+            </div>
+         
+        </div>
+    </div>
+</section>
+

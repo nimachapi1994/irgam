@@ -1,0 +1,445 @@
+@media only screen and (min-width: 1400px) {
+    .carousel-style-1 .owl-buttons div.owl-prev {
+        left: -100px;
+    }
+    .carousel-style-1 .owl-buttons div.owl-next {
+        right: -100px;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+    .wa-project .caption-text {
+        top: 60px;
+    }
+    .project-col4 .wa-project .caption-text {
+        top: 30px
+    }
+    .wa-product .caption-text {
+        top: 100px;
+    }
+    .wa-product .caption-text {
+        top: 60px
+    }
+    .wa-product-4col .wa-product .caption-text,
+    .project-flullwidth .wa-project .caption-text {
+        top: 40px
+    }
+    .wa-product-sidebar .wa-product .caption-text {
+        top: 40px
+    }
+    .order-table {
+        display: table;
+        min-height: 120px;
+        width: 100%;
+    }
+    .order-table-cell {
+        display: table-cell;
+    }
+    .order-text input {
+        margin-top: 40px;
+        display: inline-block;
+    }
+    .order-text h5 {
+        margin-top: 50px;
+        display: inline-block;
+    }
+    .order-text strong {
+        margin-top: 45px;
+        display: inline-block;
+    }
+    .carousel-style-1 .owl-buttons div.owl-prev {
+        left: -12px;
+    }
+    .carousel-style-1 .owl-buttons div.owl-next {
+        right: -12px;
+    }
+    .sidebar .tag-list a {
+        padding: 10px 5px;
+    }
+    .sidebar .tag-list a:nth-child(even) {
+        margin-left: 1px;
+    }
+    .sidebar .tag-list a:nth-child(odd) {
+        margin-right: 1px;
+    }
+    .social-style li a,
+    .widget .social-style li a {
+        margin: 0px 3px;
+    }
+    .about-content .inner.padT100 {
+        padding-top: 40px;
+    }
+    .content-column h2 {
+        font-size: 25px;
+    }
+    .count-area {
+        padding: 40px 0px;
+        font-size: 50px;
+        height: 120px;
+        width: 120px;
+    }
+    .contact-box {
+        min-height: 310px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav > li > a {
+        padding: 20px 15px;
+    }
+    .order-table {
+        display: table;
+        min-height: 120px;
+        width: 100%;
+    }
+    .wa-product .caption-text {
+        top: 50px
+    }
+    .wa-product-4col .wa-product .caption-text,
+    .project-col4 .wa-project .caption-text {
+        top: 40px
+    }
+    .project-flullwidth .wa-project .caption-text {
+        top: 50px
+    }
+    .wa-product-sidebar .wa-product .caption-text {
+        top: 40px
+    }
+    .thumbnail-row img {
+        width: 100%;
+    }
+    .order-table-cell {
+        display: table-cell;
+        #vertical-align: middle;
+    }
+    .order-text input {
+        margin-top: 25px;
+        display: inline-block;
+    }
+    .order-text h5 {
+        margin-top: 50px;
+        display: inline-block;
+    }
+    .order-text strong {
+        margin-top: 30px;
+        display: inline-block;
+    }
+    .navbar-default .navbar-brand {
+        color: #000;
+        float: left;
+        width: 100%;
+        padding: 10px 0px;
+    }
+    .wa-box-style2 {
+        padding: 50px 30px;
+    }
+    ul.page-lists li a {
+        padding: 10px 2px;
+        font-size: 13px;
+    }
+    .about-content .inner.padT100 {
+        padding-top: 50px;
+    }
+    .content-column h2 {
+        font-size: 25px;
+    }
+    .carousel-style-1 .owl-buttons {
+        padding: 0px 10px;
+    }
+    .upper-footer .col-md-3.col-sm-6:nth-child(3) {
+        clear: both;
+    }
+    .coming-soon-page h1 {
+        font-size: 72px;
+        line-height: 75px;
+        margin: 20px 0px;
+    }
+    .coming-soon-page h3 {
+        font-size: 28px;
+        line-height: 35px;
+    }
+    .count-area {
+        padding: 45px 0px;
+        font-size: 50px;
+        width: 140px;
+        height: 140px;
+    }
+    .sidebar .tag-list a {
+        padding: 10px 6px;
+    }
+    .sidebar .tag-list a:nth-child(even) {
+        margin-left: 1px;
+    }
+    .sidebar .tag-list a:nth-child(odd) {
+        margin-right: 1px;
+    }
+    .contact-box {
+        min-height: 354px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    #top-bar .pull-left,
+    #top-bar .pull-right {
+        width: 100%;
+        text-align: center;
+    }
+    #top-bar ul li:after {
+        width: 0px;
+        margin-right: 0px;
+    }
+    #top-bar ul li a {
+        margin-right: 10px;
+    }
+    .wa_main_bn_wrap figure figcaption {
+        text-align: center;
+    }
+    .wa_main_bn_wrap figcaption h2 {
+        font-size: 40px;
+    }
+    .about-content .image-column {
+        margin-bottom: 30px;
+    }
+    .wa-project-caption h2 a {
+        font-size: 18px;
+    }
+    .wa-project-caption h2 {
+        line-height: 28px;
+    }
+    .wa-project .caption-text {
+        top: 30px;
+    }
+    .home-blog-item .wa-theme-design-block {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .blogs_main .blog-list-caption.block-caption {
+        padding: 30px 0px 0px 0px;
+    }
+    .carousel-style-1 .owl-buttons {
+        position: absolute;
+        top: calc(100% + 30px);
+        text-align: center;
+        margin-top: 0px;
+        left: calc(50% - 65px);
+        width: 130px;
+    }
+    .carousel-style-1 .owl-buttons div {
+        position: relative;
+    }
+    .testimonial,
+    .home-product {
+        padding-bottom: 180px;
+    }
+    #main-footer .widget {
+        margin-bottom: 30px;
+        position: relative;
+        float: left;
+        width: 100%;
+		text-align: right;
+        ;
+    }
+    .marB-s30 {
+        margin-bottom: 30px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    #top-bar .pull-left ul {
+        text-align: left;
+    }
+    #top-bar .pull-right ul {
+        text-align: right;
+    }
+    #top-bar .pull-right ul li:last-child a {
+        margin-right: 0;
+    }
+    .navbar-nav > li > a {
+        padding: 35px 15px;
+    }
+    .navbar>.container .navbar-brand,
+    .navbar>.container-fluid .navbar-brand {
+        padding: 15px 0px;
+    }
+    .rev-content .icon-list {
+        text-align: right;
+    }
+    .order-table {
+        display: table;
+        min-height: 120px;
+        width: 100%;
+    }
+    .order-table-cell {
+        display: table-cell;
+    }
+    .order-text input {
+        margin-top: 40px;
+        display: inline-block;
+    }
+    .order-text h5 {
+        margin-top: 50px;
+        display: inline-block;
+    }
+    .order-text strong {
+        margin-top: 45px;
+        display: inline-block;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .order-row {
+        width: 100%;
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+    }
+    #top-bar .pull-right ul {
+        padding: 5px 0 0;
+    }
+    .about-content .inner.padT100 {
+        padding-top: 30px;
+        margin-bottom: 100px;
+        text-align: center;
+    }
+    .about-content .image-column {
+        margin-bottom: 30px;
+    }
+    .wa-box-style2 {
+        padding: 50px 35px;
+    }
+    .home-middle-widget .ratings {
+        float: none;
+    }
+    .fun-fact-section h1 {
+        font-size: 36px;
+    }
+    .filter-tab {
+        margin-bottom: 0px;
+        display: inline-block;
+    }
+    .wa-project .caption-text {
+        top: 60px;
+    }
+    .carousel-style-1 .owl-buttons div {
+        position: relative;
+    }
+    .carousel-style-1 .owl-buttons {
+        position: absolute;
+        top: calc(100% + 30px);
+        text-align: center;
+        margin-top: 0px;
+        left: calc(50% - 60px);
+        width: 120px;
+    }
+    .sidebar {
+        float: left;
+        width: 100%;
+        position: relative;
+        margin-top: 30px;
+    }
+    .testimonial,
+    .home-product {
+        padding-bottom: 180px;
+    }
+    .home-blog-item {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .home-blog-item:last-child {
+        margin-bottom: 0px;
+    }
+    .wa-product .outer {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .wa-product-detail .product-thumb figure {
+        margin-bottom: 30px;
+    }
+    .wa-product-detail .inner.padTB30 {
+        padding-top: 0px;
+    }
+    .order-text {
+        padding: 5px 0px;
+    }
+    .content-column h2 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+    #main-footer .bottom-footer {
+        text-align: center;
+    }
+    #main-footer ul.social {
+        float: none;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    #main-footer ul.social li {
+        float: none;
+        display: inline-block;
+    }
+    .news-letter-heading h2 {
+        line-height: 25px;
+        font-size: 20px;
+    }
+    .navbar-collapse.in {
+        overflow-y: visible;
+    }
+    .coming-soon-page h1 {
+        font-size: 60px;
+        line-height: 60px;
+        margin: 20px 0px;
+    }
+    .coming-soon-page h3 {
+        font-size: 18px;
+    }
+    .count-area {
+        padding: 25px 0px;
+        font-size: 42px;
+        width: 100px;
+        height: 100px;
+    }
+}
+@media only screen and (max-width: 479px) {
+    .navbar-default .navbar-brand {
+        padding: 8px;
+    }
+	.navbar-header{border: none;}
+    .wa_main_bn_wrap figcaption p,
+    .wa_main_bn_wrap .owl-pagination {
+        display: none;
+    }
+    .wa_main_bn_wrap figcaption span {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0px;
+    }
+    .wa_main_bn_wrap figcaption span span {
+        line-height: 0;
+    }
+    .wa_main_bn_wrap figcaption h2 {
+        font-size: 18px;
+        line-height: 1.2em;
+    }
+    .wa_main_bn_wrap figure figcaption {
+        margin: 0px;
+        padding: 0px 15%;
+        top: 30%;
+    }
+    .wa_main_bn_wrap .owl-buttons {
+        bottom: 72%;
+        width: 100%;
+    }
+    .wa_main_bn_wrap .owl-theme .owl-pagination {
+        bottom: 10px;
+    }
+}
+@media only screen and (max-width: 390px){
+	.navbar-brand > img{
+		width: 180px;
+		margin-top: 10px;
+	}
+}

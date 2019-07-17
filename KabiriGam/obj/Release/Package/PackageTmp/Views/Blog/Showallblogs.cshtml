@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "ShowAllProjects";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+@model IEnumerable< KabiriGam.Models.SelectAllContents_Result >
+
+<div style="margin:auto;width:80%;font-family:Tahoma;font-size:large" dir="rtl">
+    <br />
+    <label>تمامی وبلاگ های ثبت شده</label>
+    <hr />
+    <div class="alert-success">@TempData["msgsuccess"]</div>
+    @for (int i = 0; i < 2; i++)
+    {
+        <br />
+    }
+
+    <table class="table table-bordered table-responsive pull-right" dir="rtl" style="font-size:large">
+        <tr>
+
+            <th class="text-center"> موضوع وبلاگ</th>
+            <th class="text-center"> تاریخ ایجاد/ ویرایش وبلاگ</th>
+            <th class="text-center">تصویر</th>
+            <th class="text-center">کامنت</th>
+            <th class="text-center">ویرایش</th>
+            <th class="text-center">حذف</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr dir="rtl">
+
+
+                <td dir="rtl" class="text-center">@item.Name</td>
+                <td dir="rtl" class="text-center">@KabiriGam.Controllers.HomeController.EngToPer(item.Date.Value)</td>
+                <td class="text-center">
+
+
+                    <img style="width:200px;height:200px" class="img-thumbnail img-responsive img-rounded" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.pic)}")" />
+
+
+
+                </td>
+
+
+
+
+
+                <td class="text-center"><a href="/CommentForblog/ShowAllComments?id=@item.Id">مدیریت کامنت های این مقاله</a></td>
+
+                <td><a href="/blog/EditeBlog?id=@(item.Id)" class="btn btn-success btn-sm">ویرایش</a></td>
+                <td><a id="btnDelete" href="/blog/DeleteBlog?id=@(item.Id)" class="btn btn-warning btn-sm">حذف</a></td>
+
+            </tr>
+        }
+    </table>
+</div>
+<script>
+    btnDelete.onclick = function () {
+        if (confirm("آیا اطمینان دارید؟")==true) {
+            return true;
+            this.textContent = 'شروع عملیات حذف'
+        } else {
+            return false;
+        }
+
+        }
+</script>
+
+

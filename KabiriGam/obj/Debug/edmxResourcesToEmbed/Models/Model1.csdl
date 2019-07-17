@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="irgamcom_gamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AboutUsPage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="PageContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="CommentsForContent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Txt" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="Content_Id" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="IsShow" Type="Boolean" />
+    <NavigationProperty Name="Content" Relationship="Self.FK_CommentsForContent_Contents" FromRole="CommentsForContent" ToRole="Contents" />
+  </EntityType>
+  <EntityType Name="CommentsForProject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Txt" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Project_Id" Type="Int32" />
+    <Property Name="date1" Type="DateTime" Precision="3" />
+    <Property Name="IsShow" Type="Boolean" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_CommentsForProjects_Projects" FromRole="CommentsForProjects" ToRole="Projects" />
+  </EntityType>
+  <EntityType Name="CommentsForService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Txt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Services_Id" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="IsShow" Type="Boolean" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_CommentsForServices_Services" FromRole="CommentsForServices" ToRole="Services" />
+  </EntityType>
+  <EntityType Name="Contactu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameAndFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Txt" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Txt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ShortTxt" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CommentsForContents" Relationship="Self.FK_CommentsForContent_Contents" FromRole="Contents" ToRole="CommentsForContent" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Txt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="CommentsForProjects" Relationship="Self.FK_CommentsForProjects_Projects" FromRole="Projects" ToRole="CommentsForProjects" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionTxt" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RequestForOneQuestion" Relationship="Self.FK_RequestFoOneQuestion_Questions" FromRole="Questions" ToRole="RequestForOneQuestion" />
+  </EntityType>
+  <EntityType Name="RequestForOneQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Request" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Question" Relationship="Self.FK_RequestFoOneQuestion_Questions" FromRole="RequestForOneQuestion" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="Txt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ShortTxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CommentsForServices" Relationship="Self.FK_CommentsForServices_Services" FromRole="Services" ToRole="CommentsForServices" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="InsertDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SocialNetwork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="aparat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LinkedIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soroush" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tlg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Instagram" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GooglePlus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentsForContent_Contents">
+    <End Role="Contents" Type="Self.Content" Multiplicity="0..1" />
+    <End Role="CommentsForContent" Type="Self.CommentsForContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CommentsForContent">
+        <PropertyRef Name="Content_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentsForProjects_Projects">
+    <End Role="Projects" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="CommentsForProjects" Type="Self.CommentsForProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CommentsForProjects">
+        <PropertyRef Name="Project_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentsForServices_Services">
+    <End Role="Services" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="CommentsForServices" Type="Self.CommentsForService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CommentsForServices">
+        <PropertyRef Name="Services_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RequestFoOneQuestion_Questions">
+    <End Role="Questions" Type="Self.Question" Multiplicity="1" />
+    <End Role="RequestForOneQuestion" Type="Self.RequestForOneQuestion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RequestForOneQuestion">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DbIrgam" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AboutUsPages" EntityType="Self.AboutUsPage" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="CommentsForContents" EntityType="Self.CommentsForContent" />
+    <EntitySet Name="CommentsForProjects" EntityType="Self.CommentsForProject" />
+    <EntitySet Name="CommentsForServices" EntityType="Self.CommentsForService" />
+    <EntitySet Name="Contactus" EntityType="Self.Contactu" />
+    <EntitySet Name="Contents" EntityType="Self.Content" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="Questions" EntityType="Self.Question" />
+    <EntitySet Name="RequestForOneQuestions" EntityType="Self.RequestForOneQuestion" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="Sliders" EntityType="Self.Slider" />
+    <EntitySet Name="SocialNetworks" EntityType="Self.SocialNetwork" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentsForContent_Contents" Association="Self.FK_CommentsForContent_Contents">
+      <End Role="Contents" EntitySet="Contents" />
+      <End Role="CommentsForContent" EntitySet="CommentsForContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentsForProjects_Projects" Association="Self.FK_CommentsForProjects_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="CommentsForProjects" EntitySet="CommentsForProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentsForServices_Services" Association="Self.FK_CommentsForServices_Services">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="CommentsForServices" EntitySet="CommentsForServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RequestFoOneQuestion_Questions" Association="Self.FK_RequestFoOneQuestion_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="RequestForOneQuestion" EntitySet="RequestForOneQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="DeleteOneContact">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteOneContent">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteOneContentCommen">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteOneProject">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteOneProjectComment">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteOneService">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteOneServiceComment">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOneCommentForOneContent">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="co_id" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOneCommentForOneProject">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="proid" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOneCommentForOneServices">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="ser_id" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOneContact">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="insertOneContent">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="pic" Mode="In" Type="Binary" />
+      <Parameter Name="shorttxt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOneProject">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="logo1" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOneService">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="pic" Mode="In" Type="Binary" />
+      <Parameter Name="showtxt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAllCommentForOneServices" ReturnType="Collection(irgamcom_gamModel.SelectAllCommentForOneServices_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAllContents" ReturnType="Collection(irgamcom_gamModel.SelectAllContents_Result)" />
+    <FunctionImport Name="SelectAllOneContacts" ReturnType="Collection(irgamcom_gamModel.SelectAllOneContacts_Result)" />
+    <FunctionImport Name="SelectAllOneContentComment" ReturnType="Collection(irgamcom_gamModel.SelectAllOneContentComment_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAllOneProjectComment" ReturnType="Collection(irgamcom_gamModel.SelectAllOneProjectComment_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAllProjects" ReturnType="Collection(irgamcom_gamModel.SelectAllProjects_Result)" />
+    <FunctionImport Name="SelectAllServices" ReturnType="Collection(irgamcom_gamModel.SelectAllServices_Result)" />
+    <FunctionImport Name="SelectOneContact" ReturnType="Collection(irgamcom_gamModel.SelectOneContact_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectOneContent" ReturnType="Collection(irgamcom_gamModel.SelectOneContent_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectOneProject" ReturnType="Collection(irgamcom_gamModel.SelectOneProject_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectOneService" ReturnType="Collection(irgamcom_gamModel.SelectOneService_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Selectslider" ReturnType="Collection(irgamcom_gamModel.Selectslider_Result)" />
+    <FunctionImport Name="UpdateOneContent">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="pic" Mode="In" Type="Binary" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="shorttxt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateOneProject">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="logo1" Mode="In" Type="Binary" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateOneService">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="txt" Mode="In" Type="String" />
+      <Parameter Name="pic" Mode="In" Type="Binary" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="shorttxt" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SelectAllCommentForOneServices_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="String" Name="Txt" Nullable="true" />
+    <Property Type="Int32" Name="Services_Id" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="IsShow" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SelectAllContents_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="ShortTxt" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SelectAllOneContacts_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="NameAndFamily" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SelectAllOneContentComment_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Content_Id" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="IsShow" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SelectAllOneProjectComment_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="Project_Id" Nullable="true" />
+    <Property Type="DateTime" Name="date1" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsShow" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SelectAllProjects_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="String" Name="Txt" Nullable="true" />
+    <Property Type="Binary" Name="logo" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="SelectAllServices_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Txt" Nullable="true" />
+    <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="ShortTxt" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SelectOneContact_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="NameAndFamily" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SelectOneContent_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Txt" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+    <Property Type="Binary" Name="pic" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="ShortTxt" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SelectOneProject_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="String" Name="Txt" Nullable="true" />
+    <Property Type="Binary" Name="logo" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="SelectOneService_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Txt" Nullable="true" />
+    <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="ShortTxt" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Selectslider_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Binary" Name="Pic" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

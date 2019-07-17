@@ -1,0 +1,283 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+  font-family:"iransans-web";
+  src: url("../fonts/iransans-web.eot");
+  src: url("../fonts/iransans-web.ttf") format("truetype"), url("../fonts/iransans-web.woff") format("woff"), url("../fonts/iransans-web.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+	font-family:"iransans-web";
+}
+p,h1,h2,h3,h4,h6,em{line-height: 2em;}
+body{
+	font-family:"iransans-web";
+}
+.navbar-nav{
+	float: left;
+	direction: rtl;
+}
+
+.dropdown-menu>li>a {
+    padding: 10px 10px;
+    clear: both;
+    font-size: 12px;
+    white-space: nowrap;
+}
+.dropdown-submenu {
+    position: relative;
+	right: 0;
+}
+.container .mix {
+    text-align: right;
+}
+.wa_main_bn_wrap {
+    float: right;
+}
+.wa_main_bn_wrap figure {
+    float: right;
+}
+.wa_main_bn_wrap figure figcaption {
+    text-align: right;
+}
+.wa_main_bn_wrap figcaption span {
+	direction: rtl;
+}
+.wa_main_bn_wrap figcaption span:before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+.centered-title.left-align-title-strict {
+    text-align: right;
+}
+.centered-title {
+	direction: rtl;
+}
+.wa-box-style2 {
+	direction: rtl;
+}
+#main-footer .bottom-footer p {
+	direction: rtl;
+}
+#main-footer ul.social {
+    float: left;
+}
+.fun-fact-section {
+    float: left;
+    direction: rtl;
+}
+
+.fa-angle-right:before{content:"\f104"}
+.styled-pagination li i.fa-angle-right:before{content:"\f105"}
+.news-letter-form input {
+	direction: ltr;
+	text-align: right;
+}
+
+.breadcrumb {
+	direction: rtl;
+}
+.breadcrumb>li+li:before {
+    content: "\f100";
+	right: -20px;
+}
+.faqs-accordion h3.ui-state-default {
+    font-family:"iransans-web";
+    font-size: 14px;
+    font-weight: 400;
+	direction: rtl;
+}
+.faqs-accordion .ui-state-default {
+    padding: 0.4em .7em 0.4em 40px;
+}
+
+.faqs-accordion p{
+	direction: rtl;
+	text-align: justify;
+}
+.left-title h2 {
+	text-align: right;
+}
+#exampleInputEmail{
+	direction: ltr;
+	text-align: right;
+}
+.theme-button,
+.theme-button:hover {
+	float: right;
+	margin-bottom:20px;
+}
+.theme-button.marT10 {
+    float: none;
+	margin-bottom:0;
+}
+ul.links-lists,
+ul.page-lists {
+	direction: rtl;
+}
+ul.links-lists li a i,
+ul.page-lists li a i {
+    left: 10px;
+}
+.tag-list a {
+	float:right;
+}
+.latest-twitts img {
+    margin-left: 10px;
+	float: right;
+}
+.latest-twitts span {
+	float: right;
+}
+.latest-twitts p {
+	direction: rtl;
+}
+.form-group input[type="search"]{
+	direction: ltr;
+	text-align: right;
+}
+.form-group input[type="text"]{
+	direction: ltr;
+	text-align: right;
+}
+input[type="text"].form-controller{
+	direction: ltr;
+	text-align: right;
+}
+div .form-group{
+	text-align: right;
+	direction: rtl;
+}
+#fashion_contactform input[type]{
+	direction: ltr;
+	text-align: right;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	direction: rtl;
+}
+.error-text {
+	direction: rtl;
+}
+.search-form .button {
+    left: -3px;
+    padding: 10px 20px;
+}
+@media only screen and (max-width: 767px)
+{
+	.navbar-nav{
+		text-align: right;
+	}
+	.navbar-nav > li {
+		float: right;
+	}
+	.has-submenu:after {
+		left: 20px;
+	}
+}
+.login-form {
+	direction: rtl;
+}
+.contact-box p {
+	direction: ltr;
+}
+.product-checkout .market-info {
+	direction: rtl;
+}
+
+.form-row{
+	direction: rtl!important;
+	text-align: right!important;
+}
+/*.blogs_main .block-caption {
+    float: right;
+}*/
+.blogs_main .blog-list-caption.block-caption {
+    padding: 20px 15px 0px 0px;
+}
+.blogs_main .block-caption p {
+    direction: rtl;
+	text-align: justify;
+}
+.blogs_main .meta-block li {
+    margin-left: 10px;
+}
+.box-check {
+    right: 0;
+}
+.padL20 {
+    padding-right: 20px;
+}
+.inline{
+	/*float: right!important;*/
+	text-align: right;
+	padding-right: 20px;
+}
+.inline.padL20.radio-label{
+	float: right;
+}
+input[type].wv_form_focus{
+	direction: rtl;
+}
+ul.inline li {
+    direction: rtl;
+}
+.product-checkout .login,
+.product-checkout .checkout_coupon,
+.product-checkout .shipping-fields,
+.product-checkout .create-account,
+.product-checkout .payment_box {
+	direction: rtl;
+}
+.wv_subtotal_left,
+.wv_subtotal_right {
+	direction: rtl;
+}
+.wv_total_left,
+.wv_total_right {
+    direction: rtl;
+}
+.wv_shipping {
+	text-align: right;
+	direction: rtl;
+}
+ul.payment_methods.methods {
+    float: right;
+}
+ul.payment_methods.methods li {
+    float: right;
+}
+ul.payment_methods.methods li label {
+    right: 20px;
+}
+.check {
+    right: 0!important;
+}
+div.order-table-cell{
+	direction: rtl;
+}
+.padB10 {
+	direction: rtl;
+}
+.content-column span.price {
+	direction: rtl;
+}
+.inner p{
+	direction: rtl;
+}
+.ratings {
+    margin-right: 0;
+    padding-right: 0;
+    float: right;
+	text-align: right;
+}
+.rev-content p {
+	direction: rtl;
+}

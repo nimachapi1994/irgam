@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+   
+
+    <script src="~/Template/js/vendor/jquery-1.12.4.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title class="text-center">پنل مدیریت ادمین</title>
+</head>
+<body>
+   
+    <div class="text-center"style="background-color:#f6eeee">
+<img src="~/Img/Logo/GamLogo.png" style="height:150px" /></div>
+    <div>
+        @for (int i = 0; i <1; i++)
+        {
+            <br />
+        }
+        <div class="text-center">
+            
+            <div style="margin:auto;font-family:Tahoma">
+
+
+                <style>
+                    .a {
+                        font-size: medium;
+                        border-color:#000000;
+                        background-color:#808080
+                    }
+                    .logoutbtnstyle{
+                          border-color:#808080;
+                        background-color:#ff6a00;
+                    }
+                </style>
+           
+                
+                <a href="/AdminAccount/SignOut" class="logoutbtnstyle btn btn-danger" id="btn">خروج</a>
+                <a href="/AdminAccount/Resetpass" class="btn btn-info a" id="btn">تغییر رمز عبور</a>
+                <a href="/ManageContentPages/PageAboutUs" class="btn btn-info a" id="btn">مدیریت درباره ما</a>
+                <a href="/ContactUsManagment/ManageContactUs" class="btn btn-info a" id="btn">مدیریت ارتباط با سایت</a>
+                <a href="/SocialNetworksManagment/SocialNetworksManagment" class="btn btn-info a" id="btn">مدیریت شبکه های اجتماعی</a>
+                <a href="/slider/slider" class="btn btn-info a" id="btn">مدیریت اسلایدر</a>
+                <a href="/blog/BlogManagment" class="btn btn-info a" id="btn">مدیریت مقالات</a>
+                <a href="/Services/ManagmentServices" class="btn btn-info a" id="btn">مدیریت خدمات</a>
+
+                <a href="/project/ManagmentProject" class="btn btn-info a" id="btn">مدیریت پروژه ها</a>
+         
+            </div>
+            <br />
+            @RenderBody()
+        </div>
+        <link href="~/Plugins/Editor/Css/richtext.min.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+    </div>
+   
+
+</body>
+
+</html>

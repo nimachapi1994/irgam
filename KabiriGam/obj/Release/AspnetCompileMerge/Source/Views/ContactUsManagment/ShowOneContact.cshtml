@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "ShowOneContact";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model IEnumerable<KabiriGam.Models.Contactu>
+
+<body>
+    <div style="margin:auto;font-family:Tahoma">
+
+        <br />
+        <br />
+        <div class="alert-success" style="margin:auto">@TempData["msgsuccess"]</div>
+        <hr />
+        <br />
+
+        <table class="table table-bordered table-hover table-responsive table-striped text-center" style="margin:auto;width:60%" dir="rtl">
+            <tr style="background-color:#151111" class="text-center">
+                <th class="text-center">نام</th>
+                <th class="text-center">ایمیل</th>
+                <th class="text-center">موضوع</th>
+                <th class="text-center">شماره تماس</th>
+
+                <th class="text-center">حذف</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NameAndFamily</td>
+                    <td>@item.Email</td>
+                    <td>@item.Subject</td>
+                    <td>@item.PhoneNumber</td>
+
+                    <td><a href="/ContactUsManagment/DeleteContactUs?id=@(item.Id)" class="btn btn-danger">حذف</a></td>
+                </tr>
+            }
+        </table>
+        <br />
+        <hr />
+
+        <style>
+            .kl {
+                text-align: center;
+                margin: auto;
+                vertical-align: middle;
+                width: 40%;
+                border: 2px solid #808080;
+            }
+        </style>
+        <section class="welcome-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="welcome-content-wrapper   wow fadeInUp">
+                            <div class="row container text-center">
+                                <div class="col-sm-12 col-xs-12 col-md-12 text-center" style="font-family:Tahoma;font-size:medium" dir="ltr">
+
+
+
+
+                                    @foreach (var item in Model)
+                                    {<pre style="font-size:large">
+                                    @item.Txt
+                                    <br />
+                                </pre>
+                                    }
+
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Welcome Area End -->
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <hr />
+
+    </div>
+
+</body>
+
+@for (int i = 0; i < 5; i++)
+{
+    <br />
+}
+
+
+</div>
+

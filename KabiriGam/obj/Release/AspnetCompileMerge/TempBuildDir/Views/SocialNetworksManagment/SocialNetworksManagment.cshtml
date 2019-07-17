@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "SocialNetworksManagment";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<body>
+
+    <br />
+    <div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="alert-success" id="divSuccessSocialNetworks"style="font-family:Tahoma">@TempData["msgSocialNeteworks"]</div>
+
+                <div class="title" style="font-family:Tahoma">
+                    <br />
+                    <h4 style="font-family:Tahoma">لطفا آدرس لینک شبکه های اجتماعی را وارد نمایید</h4>
+                    <br />
+                    <h4 style="font-family:Tahoma">https://t.me/IrGam : مثال   </h4>
+                    <br />
+                    <h4 style="font-family:Tahoma">https://www.facebook.com/IrGam : مثال   </h4>
+                    <hr />
+
+                    <br />
+                    <br />
+                    <form action="/SocialNetworksManagment/AddSocialNetwork" method="post">
+
+
+
+
+
+                        <div class="form-group  text-center" style="align-content:center;font-family:Tahoma">
+                            @foreach (var item in ViewBag.showallsocialnetwoks as IEnumerable<KabiriGam.Models.SocialNetwork>)
+                            {
+                                <div class="row">
+                                    <div class="col-sm-2 col-md-2"></div>
+                                
+                                   <div >
+                                       <div class="col-sm-4 col-md-4 container pull-left">
+                                           <div class="form-group">
+
+                                               <span><small><img src="~/img/Icons/if_telegram_1419139.png" style="width:50px;height:50px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی کانال یا اکانت تلگرام" class="form-control" value="@item.Tlg" name="Tlg" placeholder="Telegram Id/Channel Id">
+                                           </div>
+
+
+
+                                           <div class="form-group">
+
+                                               <span><small><img src="~/img/Icons/instagram.png" style="width:50px;height:50px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی اینستاگرام" name="Instagram" class="form-control" value="@item.Instagram" placeholder="Instagram Id">
+                                           </div>
+                                           <div class="form-group">
+
+                                               <span><small><img src="~/img/KaboroGamIconSocialNetworks/soroush.png" style="width:50px;height:50px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی سروش" name="soroush" class="form-control" value="@item.soroush" placeholder="Soroush Id">
+                                           </div>
+
+                                       </div>
+                                   </div>
+                                    
+                                   <div style="padding-right:10%"> 
+                                       <div class="col-sm-4 col-md-4 container pull-right">
+                                           <div class="form-group">
+
+                                               <span><small><img src="~/img/Icons/linkedin.png" style="width:50px;height:50px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی لینکدین" name="LinkedIn" class="form-control" value="@item.LinkedIn" placeholder="LinkedIn Id">
+                                           </div>
+                                           <div class="form-group">
+
+                                               <span><small><img src="~/img/Icons/Googleplus.png" style="width:50px;height:50px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="آیدی گوگل پلاس" name="GooglePlus" class="form-control" value="@item.GooglePlus" placeholder="GooglePlus Id">
+                                           </div>
+                                           <div class="form-group">
+
+                                               <span><small><img src="~/img/KaboroGamIconSocialNetworks/aparat-farsgraphic.png" style="width:50px;height:50px;padding-bottom:3%" /></small></span>   <input dir="ltr" title="لینک آپارات " name="aparat" class="form-control" value="@item.aparat" placeholder="Aparat Link">
+                                           </div>
+                                       </div>
+                                   </div>
+                                    <div class="col-sm-2 col-md-2"></div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-3"></div>
+                                    <div class="col-sm-6 col-md-6">
+                                       
+                                    </div>
+                                    <div class="col-sm-3 col-md-3"></div>
+                                </div>
+
+                                       
+                            }
+
+
+
+
+                        </div>
+
+                        <hr />
+                        <br />
+
+
+
+
+
+                        <div style="margin:auto" class="text-center">
+                            <button class="btn btn-success btn-md" id="btnSaveSocialNetworks">ذخیره اطلاعات</button>
+                        </div>
+                    </form>
+                </div>
+
+                <script>
+                    btnSaveSocialNetworks.onclick = function () {
+                        this.textContent='در حال ذخیره اطلاعات'
+                    }
+                </script>
+            </div>
+</body>
+
+
+
+

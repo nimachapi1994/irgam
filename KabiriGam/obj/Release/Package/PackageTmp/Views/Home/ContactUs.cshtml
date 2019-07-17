@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<section class="page_single padTB100 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--//==Section Heading Start==//-->
+                        <div class="centered-title">
+                            <h2>اطلاعات تماس<span class="heading-shapes"><i></i><i></i><i></i></span></h2>
+                            <div class="clear"></div>
+                            <em>لطفا از طریق ایمیل و تلفن<br>با ما در ارتباط باشید.</em>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <!--//==Section Heading End==//-->
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="wa-box-style2 contact-box grey-bg">
+                            <div class="icon">
+                                <i class="fa fa-map-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="text">
+                                <h4>آدرس</h4>
+                                <p>شیراز نبض خیابان عفیف آباد از طرف قصروالدشت ساختمان جنب بانگ سپه طبقه چهارم واحد سمت راست</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="wa-box-style2 contact-box grey-bg">
+                            <div class="icon">
+                                <i class="fa fa-mobile" aria-hidden="true"></i>
+                            </div>
+                            <div class="text">
+                                <h4>شماره تماس</h4>
+                                <p>
+                                   0917 818 1641
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="wa-box-style2 contact-box grey-bg">
+                            <div class="icon">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="text">
+                                <h4>پست الکترونیکی</h4>
+                                <p>
+                                    irgam1396@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page_single padB100">
+    <div class="container">
+        <div class="row contact-bottom">
+            <!--//==Section Heading Start==//-->
+            <div class="col-md-12">
+                <!--//==Section Heading Start==//-->
+                <div class="centered-title">
+                    <h2>با ما در تماس باشید<span class="heading-shapes"><i></i><i></i><i></i></span></h2>
+                    <div class="clear"></div>
+                    <em>لطفا جهت ارتباط بهتر <br>فرم زیر را پر نمایید.</em>
+                </div>
+            </div>
+            <!--//==Section Heading End==//-->
+            <!--//==Form Area Start==//-->
+            <br />
+
+            <br />
+            <div class="col-md-12 left-box">
+              
+                <br />
+                <div class="container text-center" style="text-align:center"><div style="color:green">@TempData["Successok"]</div><hr /></div>
+
+                <br />
+                <form action="/home/contactusconfirm" method="post">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>نام و نام خانوادگی<span class="required red-text"></span></label>
+                                <input type="text" id="txtname" name="NameAndFamily">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>پست الکترونیکی<span class="required red-text"></span></label>
+                                <input type="email" name="email" id="txtemail">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>شماره همراه</label>
+                                <input type="text" name="phonenumber" id="txtphonenumber">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>موضوع </label>
+                                <input type="text" name="subject" id="txtsubject">
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>متن<span class="required red-text"></span></label>
+                                <textarea id="txttext" name="txt" class="textarea-message" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <input type="submit" class="theme-button" id="btnsendContact" value="ارسال پیام">
+                            <div class="fashion_infotext"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--//==Form Area End==//-->
+        </div>
+    </div>
+</section>
+

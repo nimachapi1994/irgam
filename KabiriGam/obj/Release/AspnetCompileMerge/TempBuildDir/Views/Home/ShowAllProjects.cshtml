@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "ShowAllProjects";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<div class="wa-product-main home-product grey-bg padTB100">
+    <div class="container">
+        <div class="row">
+            <!--//==Section Heading Start==//-->
+            <div class="col-md-12">
+                <div class="centered-title">
+                    <h2>پروژه های ما<span class="heading-shapes"><i></i><i></i><i></i></span></h2>
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+            <!--//==Section Heading End==//-->
+        </div>
+        <div class="row">
+        
+                <!--//==product Item==//-->
+                @foreach (var item in ViewBag.Show as IEnumerable<KabiriGam.Models.SelectAllProjects_Result>)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="wa-product">
+                            <div class="wa-product-thumbnail wa-item">
+                                <img style="width:400px;height:300px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.logo)}")" alt="@item.Name" title="@item.Name" />
+                                <div class="caption">
+                                    <div class="caption-text">
+                                        <ul class="wa-product-icon"></ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wa-product-caption">
+                                <h2>
+                                    <a href="/home/showOneProject?id=@item.Id">@item.Name</a>
+                                </h2>
+                                <div class="clear"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-xs-2 visible-xs hidden-sm hidden-md"></div>
+                    <div class="visible-xs col-xs-8 hidden-md hidden-sm text-center">
+                     
+                        <div class="wa-product">
+                            <div class="wa-product-thumbnail wa-item">
+                                <img style="width:400px;height:320px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.logo)}")" alt="@item.Name" title="@item.Name" />
+                                <div class="caption">
+                                    <div class="caption-text">
+                                        <ul class="wa-product-icon"></ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wa-product-caption">
+                                <h2>
+                                    <a href="/home/showOneProject?id=@item.Id">@item.Name</a>
+                                </h2>
+                                <div class="clear"></div>
+
+                            </div>
+                        </div>
+                      
+                     
+                        
+                            <div class="wa-product">
+                                <div class="wa-product-thumbnail wa-item">
+                                    <img style="width:400px;height:320px" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.logo)}")" alt="@item.Name" title="@item.Name" />
+                                    <div class="caption">
+                                        <div class="caption-text">
+                                            <ul class="wa-product-icon"></ul>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wa-product-caption">
+                                    <h2>
+                                        <a href="/home/showOneProject?id=@item.Id">@item.Name</a>
+                                    </h2>
+                                    <div class="clear"></div>
+
+                                </div>
+                            </div>
+                       
+                    </div>
+                    <div class="col-xs-2 visible-xs hidden-sm hidden-md"></div>*@
+                }
+                <hr />
+
+                <!--//==product Item==//-->
+
+                <div class="clear"></div>
+            </div>
+        </div>
+     
+   
+</div>
+

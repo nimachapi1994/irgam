@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "AdminLogin";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<section class="page_single">
+    <div class="container">
+        <div class="row padTB100">
+            <!--//==Section Heading Start==//-->
+            <div class="col-md-12">
+                <div class="centered-title">
+                  ورود مدیریت
+                </div>
+            </div>
+            <!--//==Section Heading End==//-->
+            <div class="clear"></div>
+            <!--//==Login Section Start==//-->
+            <div class="col-md-6 col-sm-8 col-xs-12 col-md-offset-3 col-sm-offset-2 col-xs-offset-0">
+                <!--//==Form Start==//-->
+                <form action="/AdminAccount/LoginConfirm" method="post" class="login-form">
+                    <div style="font-family:Tahoma;color:red">@TempData["not"]<br /><br /><br /></div>
+                    <p class="form-row pd-right">
+                        <input type="text" name="email" id="username" placeholder="ایمیل" class="form-controller">
+                    </p>
+                    <p class="form-row pd-left">
+                        <input type="password" name="password" id="password" placeholder="رمز عبور" class="form-controller">
+                    </p>
+                    @*<p class="form-row">
+                        <label class="inline" for="rememberme">
+                            <input type="checkbox" value="forever" id="rememberme" name="rememberMe"> مرا بخاطر بسپار
+                            <span class="box-check"><span class="inside"></span></span>
+                        </label>
+                    </p>*@
+                    <p class="form-row">
+                        <input type="submit" value="ورود"  class="theme-button col-md-12 marB20">
+                    </p>
+                   
+                </form>
+                <!--//==Form End==//-->
+            </div>
+            <!--//==Login Section End==//-->
+        </div>
+    </div>
+</section>
+

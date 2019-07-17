@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "ShowAllComments";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model IEnumerable<KabiriGam.Models. SelectAllCommentForOneServices_Result>
+<body style="font-family:Tahoma">
+</body>
+<br />
+<div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4 text-center">
+
+        <p style="font-size:x-large;color:blue">کامنت های مربوط به : @ViewBag.showName </p>
+    </div>
+
+    <div class="col-md-4"></div>
+</div>
+
+<br />
+<br />
+<br />
+@foreach (var item in Model)
+{
+    
+    <div class="row" id="Div1">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <div class="col-md-4 text-center">
+                    <a href="/CommentsForServices/DeleteComment?id=@item.Id" id="btnDelete" class="btn btn-warning" value="@item.Id">حذف</a>
+                </div>
+                <div class="col-md-4 text-center">تاریخ ارسال : @KabiriGam.Controllers.HomeController.EngToPer(item.Date.Value)</div>
+
+                <div class="col-md-4 text-center">نام نام خانوادگی : @item.Name</div>
+            </div>
+        </div>
+
+        <div class="col-md-3"></div>
+    </div><br />
+    <div class="row" id="div2" dir="rtl">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+            <div class="col-md-12" style="background-color:wheat" dir="rtl">
+                @item.Txt
+            </div>
+        </div>
+
+        <div class="col-md-3"></div>
+    </div><br />
+
+    <div class="row" id="div3">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+            <div class="col-md-12">
+
+
+           @if (item.IsShow == true)
+           {
+            <a href="/CommentsForServices/NotConfirmCommentByAdmin?id=@item.Id" class="btn btn-danger">عدم تایید</a>
+           }
+           else
+           {
+            <a href="/CommentsForServices/ConfirmCommentByAdmin?id=@item.Id" class="btn btn-success">تایید و نمایش </a>
+           }
+                <div class="col-md-4 text-center">
+                    @if (item.IsShow == true)
+                {
+                        <label style="color:green" id="ok1">تایید شده</label>
+                    }
+                    else
+                    {
+                        <label style="color:#d73838" id="ok2">تایید نشده</label>
+                    }
+                </div>
+                <div class="col-md-4 text-center">:وضعیت </div>
+            </div>
+        </div>
+
+        <div class="col-md-3"></div>
+    </div>
+    <br />
+    <div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4"></div>
+            <div class="col-md-4 col-sm-4">
+                <div class="container text-center">
+                   Email: <p>@item.Email</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4"></div>
+        </div>
+    </div>
+    <br />
+    <hr />
+    for (int i = 0; i < 1; i++)
+    {
+        <br />
+    }
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    $(ChkbOkAndShowThisComment).change(function () {
+        if (ChkbOkAndShowThisComment.checked==true) {
+            jQuery.post('/CommentsForServices/ConfirmCommentByAdmin', { id: $(this).val() }, function (ok) {
+                if (ok != null && ok == 'ok') {
+                    $(ok1).html('')
+                    $(ok1).html('تایید شده')
+                }
+            })
+        } else {
+            jQuery.post('/CommentsForServices/NotConfirmCommentByAdmin', { id: $(this).val() }, function (ok) {
+                if (ok != null && ok == 'ok') {
+                    $(ok2).html('')
+                    $(ok2).html('تایید نشده')
+                }
+            })
+
+        }
+
+    })
+</script>
+<script>
+    $(btnDelete).click(function () {
+
+        if (confirm('آیا میخواهید حذف کنید؟')==true) {
+            //jQuery.post('/CommentForProject/DeleteComment', { id: $(this).attr('val') }, function (data) {
+            //    if (data != null && data == "ok") {
+            //        $(Div1).remove()
+            //        $(Div2).remove()
+            //        $(Div3).remove()
+            //    }
+            //})
+            return true;
+        } else {
+            return false;
+        }
+
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+

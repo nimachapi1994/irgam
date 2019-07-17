@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "PageAboutUs";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@section scripts{
+
+
+
+    <script src="~/Plugins/ckeditor/ckeditor.js"></script>
+}
+<div class="container text-center"style="font-family:Tahoma">
+    <div class="row">
+        <div class="col-md-1 col-sm-1 col-xs-1"></div>
+        <div class="alert-success">@TempData["success"]</div>
+        <br /><br />
+        <div class="col-md-10 col-sm-10 col-xs-10"dir="rtl"style="text-align:center">
+            <form action="/ManageContentPages/PageAboutUsUpdated" method="post">
+                <label class="control-label pull-right" for="ck">توضیحات کامل صفحه درباره ما سایت</label>
+
+
+                @foreach (var item in ViewBag.show as IEnumerable<KabiriGam.Models.AboutUsPage>)
+                {
+                    <textarea class="form-control" dir="rtl" id="ck" name="PageContent">@Html.Raw(item.PageContent)</textarea>
+
+                }
+                <br />
+                <button class="btn btn-success btn-block">ذخیره اطلاعات</button>
+            </form>
+        </div>
+
+        <div class="col-md-1 col-sm-1 col-xs-1"></div>
+    </div>
+</div>
+
+<script>
+    CKEDITOR.replace('ck', { filebrowserImageUploadUrl: '/Editor/Upload' })
+
+</script>

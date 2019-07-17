@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "EditProjects";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+@section scripts{
+
+
+
+    <script src="~/Plugins/ckeditor/ckeditor.js"></script>
+}
+<body id="bd" style="font-family :Tahoma">
+    <div style="font-family:Tahoma;font-size:large;color:blue">ویرایش سرویس</div>
+
+    <br />
+    <form action="/services/EditservicesConfirm" method="post" enctype="multipart/form-data">
+        @foreach (var item in ViewBag.showService as IEnumerable<KabiriGam.Models.SelectOneService_Result>)
+        {
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-8 text-center col-xs-12 col-sm-12">
+                    <div class="form-group">
+
+
+
+                        <label class="control-label pull-right" for="ck">توضیحات کامل</label>
+                        <textarea class="form-control" dir="rtl" id="ck" name="txt">@Html.Raw(item.Txt)</textarea>
+       <textarea class="form-control" dir="rtl" name="shortTxt">@item.ShortTxt</textarea>
+                        <br />
+                        <button class="btn btn-group-lg btn-success pull-left" style="width:20%">ویرایش نهایی سرویس</button>
+
+                        <a href="/Services/ShowAllServices" class="btn btn-block btn-default pull-right" type="button" style="width:60%">مشاهده و مدیریت تمام سرویس های ثبت شده</a>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center col-xs-12 col-sm-12">
+                    <div class="form-group pull-right">
+                        <input class="form-control" placeholder="نام سرویس" dir="rtl" value="@item.Name" name="name" />
+                        <br />
+                        <label class="control-label pull-right" for="img1">تصویر</label>
+                        <input class="form-control" type="file" id="img1" name="img" />
+                        <br />
+                        <br />
+                        <div class="form-group pull-right">
+
+                            <img id="logo" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(item.Pic)}")" class="img-responsive img-thumbnail img-rounded" width="300" height="300" />
+                            <br /><br />
+                            <button class="btn btn-lg btn-warning" type="button" id="btnDeletelogo">&times;</button>
+                        </div>
+                     
+                    </div>
+                    @for (int i = 0; i < 10; i++)
+                {
+                        <br />
+                    }
+
+                </div>
+
+                <div class="col-md-1"></div>
+
+            </div>
+        }
+    </form>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+    <script>
+    CKEDITOR.replace('ck', { filebrowserImageUploadUrl: '/Editor/Upload' })
+
+    </script>
+
+
+    <script>
+        $(function () {
+            $(img1).change(function () {
+                var reader = new FileReader();
+                reader.readAsDataURL(img1.files[0])
+                reader.onloadend = function (e) {
+                    if ($(logo).hide()) {
+                        $(logo).show()
+                    }
+                    logo.src = e.target.result;
+
+
+                }
+            })
+        })
+
+    </script>
+    <script>
+        $(function () {
+            $(btnDeletelogo).click(function () {
+                logo.src = ''
+                $(logo).hide();
+
+                $(img1).val('')
+            })
+        })
+    </script>
+</body>
+
